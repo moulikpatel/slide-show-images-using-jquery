@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        body,html{
+            height: 100%;
+            width: 100%;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            background-position: center;
+        }
+        .btn{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img class="img_01" src="images/img_02.jpg" alt=""><br>
+    <button type="button" class="btn">next</button>
+
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        loopimage();
+        function loopimage(){
+            setTimeout(function(){
+                $(".btn").click();
+                loopimage();
+
+
+            },3000)
+        }
+
+        var i=1;
+        $(".btn").click(function(){
+            i++;
+            if(i>5){
+                i=1;
+            }
+            if(i==1){
+                $(".img_01").prop("src","images/img_02.jpg");
+            }
+            else if(i==2){
+                $(".img_01").prop("src","images/img_03.avif");
+
+            }
+            else if(i==3){
+                $(".img_01").prop("src","images/img_04.jpg");
+
+            }
+            else if(i==4){
+                $(".img_01").prop("src","images/img_05.jpg");
+
+            }
+            else if(i==5){
+                $(".img_01").prop("src","images/img_06.avif");
+
+            }
+
+        })
+    })
+        
+</script>
+</html>
